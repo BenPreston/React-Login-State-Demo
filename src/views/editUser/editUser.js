@@ -17,7 +17,6 @@ export class EditUser extends Component {
     }
   }
   componentDidMount() {
-    // get user by id
     const { id } = this.props.match.params
     this.props.get(id)
   }
@@ -39,11 +38,9 @@ export class EditUser extends Component {
     const { id } = this.props.match.params
     this.setState({ submitted: true })
     const { first_name, last_name, avatar } = this.state
-    // stop here if form is invalid
     if (!(first_name && last_name && avatar)) {
       return
     }
-    // call saga reducer
     this.props.update(id, first_name, last_name, avatar)
   }
 

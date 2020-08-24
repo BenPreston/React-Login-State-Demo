@@ -27,11 +27,9 @@ export class Signup extends Component {
     e.preventDefault()
     this.setState({ submitted: true })
     const { email, password, repassword } = this.state
-    // stop here if form is invalid
     if (!(email && password) || password !== repassword) {
       return
     }
-    // call saga reducer
     this.props.attempt(email, password)
   }
   render() {

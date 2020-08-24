@@ -3,7 +3,7 @@ import * as actions from './actions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { Row, Avatar, UserInfo, Text, Cards, Card } from './styles'
+import { Cards, Card } from './styles'
 import PropTypes from 'prop-types'
 
 export class UsersList extends Component {
@@ -14,7 +14,6 @@ export class UsersList extends Component {
   }
   handleLoadMore = (e) => {
     e.preventDefault()
-    //add new data
     this.request()
   }
   request = () => {

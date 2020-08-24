@@ -26,23 +26,16 @@ export class Login extends Component {
     e.preventDefault()
     this.setState({ submitted: true })
     const { email, password } = this.state
-    // stop here if form is invalid
     if (!(email && password)) {
       return
     }
-    // call saga reducer
     this.props.attempt(email, password)
   }
   render() {
-    // Add later
     const { loading } = this.props
-    //
 
     const { email, password, submitted } = this.state
-
-    // Add later
     const title = 'Login'
-    //
 
     return (
       <DefaultLayout title={title}>
@@ -79,15 +72,7 @@ export class Login extends Component {
               )}
             </div>
             <div className="form-group">
-              <button className="form-btn" disabled={loading}>
-                {loading ? (
-                  <>
-                    <i className="fas fa-spinner  fa-spin" /> loading ...
-                  </>
-                ) : (
-                  'Login'
-                )}
-              </button>
+              <button className="form-btn">Login</button>
             </div>
             <span>
               Don't have an account?{' '}

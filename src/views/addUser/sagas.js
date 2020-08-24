@@ -10,15 +10,13 @@ function* addData(action) {
   const { first_name, last_name, avatar } = action.payload
   try {
     yield put(actions.loading(true))
-    // send post request to Api
+
     yield call(service.makePatchReq, {
       url: `/users`,
       data: { first_name, last_name, avatar }
     })
-    // save data to redux store
     const state = store.getState()
     const getUserList = state.usersList.data
-    // const newID =uuid.v4();
     const newID = Date.now()
     const newUser = { id: newID, first_name, last_name, avatar }
     getUserList.unshift(newUser)

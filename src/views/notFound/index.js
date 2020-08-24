@@ -4,7 +4,6 @@ import Footer from '../../layout/Footer'
 import { Wrapper, TextWrapper } from './styles'
 
 const NotFound = () => {
-  const title = '404 not found'
   return (
     <Wrapper>
       <TextWrapper>

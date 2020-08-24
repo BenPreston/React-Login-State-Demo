@@ -9,7 +9,7 @@ export const get = (query) => ({
 export const set = (data) => ({
   type: constants.SET,
   payload: {
-    data: data
+    data
   }
 })
 export const setTotal = (data) => ({
@@ -24,17 +24,17 @@ export const setNextPage = (data) => ({
     next_page: data
   }
 })
-export const failure = (isFaild, msg) => ({
+export const failure = (failure, message) => ({
   type: constants.FAILURE,
   payload: {
-    failure: isFaild,
-    message: msg
+    failure,
+    message
   }
 })
-export const loading = (isLoading) => ({
+export const loading = (loading) => ({
   type: constants.LOADING,
   payload: {
-    loading: isLoading
+    loading
   }
 })
 export const deleteItem = (id) => ({
@@ -43,16 +43,16 @@ export const deleteItem = (id) => ({
     id
   }
 })
-export const deleteItemFailure = (isFaild, msg) => ({
+export const deleteItemFailure = (delete_failure, delete_message) => ({
   type: constants.DELETE_ITEM_FAILURE,
   payload: {
-    delete_failure: isFaild,
-    delete_message: msg
+    delete_failure,
+    delete_message
   }
 })
-export const deleteItemLoading = (isLoading) => ({
+export const deleteItemLoading = (delete_loading) => ({
   type: constants.DELETE_ITEM_LOADING,
   payload: {
-    delete_loading: isLoading
+    delete_loading
   }
 })

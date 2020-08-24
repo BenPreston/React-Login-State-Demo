@@ -25,11 +25,9 @@ function* deleteData(action) {
   const { id } = action.payload
   try {
     yield put(actions.deleteItemLoading(true))
-    // send delete request to Api
     yield call(service.makeDeleteReq, `/users/${id}`)
     const state = store.getState()
     const getUserList = state.usersList.data
-    // delete from redux store
     const result = getUserList.filter((user) => user.id !== id)
     yield put(actions.set(result))
   } catch (error) {

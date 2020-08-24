@@ -40,7 +40,6 @@ const store = createStore(
   composeWithDevTools(
     applyMiddleware(
       sagaMiddleware,
-      //logger,
       routerMiddleware(history)
     )
   )

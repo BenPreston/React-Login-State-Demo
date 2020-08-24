@@ -15,10 +15,12 @@ export class AddUser extends Component {
       submitted: false
     }
   }
+
   handleChange = (e) => {
     const { name, value } = e.target
     this.setState({ [name]: value })
   }
+
   handleSubmit = (e) => {
     e.preventDefault()
     this.setState({ submitted: true })
@@ -34,7 +36,8 @@ export class AddUser extends Component {
   render() {
     const { loading } = this.props
     const { first_name, last_name, avatar, submitted } = this.state
-    const title = 'Add User'
+    const title = 'Add New User'
+
     return (
       <DefaultLayout title={title}>
         <div className="form-box">
@@ -49,7 +52,6 @@ export class AddUser extends Component {
                 }
                 value={first_name}
                 onChange={this.handleChange}
-                disabled={loading}
                 placeholder="Ben"
               />
               {submitted && !first_name && (
@@ -68,7 +70,6 @@ export class AddUser extends Component {
                 }
                 value={last_name}
                 onChange={this.handleChange}
-                disabled={loading}
                 placeholder="Preston"
               />
               {submitted && !last_name && (
@@ -87,7 +88,6 @@ export class AddUser extends Component {
                 }
                 value={avatar}
                 onChange={this.handleChange}
-                disabled={loading}
                 placeholder="https://example.com/mypic.jpg"
               />
               {submitted && !avatar && (
@@ -95,15 +95,7 @@ export class AddUser extends Component {
               )}
             </div>
             <div className="form-group">
-              <button className="form-btn" disabled={loading}>
-                {loading ? (
-                  <>
-                    <i className="fas fa-spinner  fa-spin" /> loading ...
-                  </>
-                ) : (
-                  'Save'
-                )}
-              </button>
+              <button className="form-btn">'Save'</button>
             </div>
           </form>
         </div>

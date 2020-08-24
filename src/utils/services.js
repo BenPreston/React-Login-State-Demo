@@ -1,9 +1,8 @@
 import axios from 'axios'
-import * as config from '../config'
 import { store } from '../store'
 import { push } from 'react-router-redux'
 
-axios.defaults.baseURL = config.API_BASE_URL
+axios.defaults.baseURL = 'https://reqres.in/api'
 export const makeGetReq = (url) =>
   axios
     .get(url)
@@ -11,6 +10,7 @@ export const makeGetReq = (url) =>
     .catch((error) => {
       throw error
     })
+
 export const makePostReq = (params) =>
   axios
     .post(params.url, params.data)
@@ -18,6 +18,7 @@ export const makePostReq = (params) =>
     .catch((error) => {
       throw error
     })
+
 export const makeDeleteReq = (url) =>
   axios
     .delete(url)
@@ -25,6 +26,7 @@ export const makeDeleteReq = (url) =>
     .catch((error) => {
       throw error
     })
+    
 export const makePatchReq = (params) =>
   axios
     .patch(params.url, params.data)

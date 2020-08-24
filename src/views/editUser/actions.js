@@ -6,31 +6,34 @@ export const set = (data) => ({
     user: data
   }
 })
+
 export const update = (id, first_name, last_name, avatar) => ({
   type: constants.UPDATE,
   payload: {
-    id: id,
-    first_name: first_name,
-    last_name: last_name,
-    avatar: avatar
+    id,
+    first_name,
+    last_name,
+    avatar
   }
 })
+
 export const get = (id) => ({
   type: constants.GET,
   payload: {
     id
   }
 })
-export const failure = (isFaild, msg) => ({
+export const failure = (failure, message) => ({
   type: constants.FAILURE,
   payload: {
-    failure: isFaild,
-    message: msg
+    failure,
+    message
   }
 })
-export const loading = (isLoading) => ({
+
+export const loading = (loading) => ({
   type: constants.LOADING,
   payload: {
-    loading: isLoading
+    loading
   }
 })

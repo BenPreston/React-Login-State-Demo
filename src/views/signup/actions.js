@@ -6,10 +6,10 @@ export const attempt = (email, password) => ({
     params: { email, password }
   }
 })
-export const failure = (isFaild, msg) => ({
+export const failure = (failure, msg) => ({
   type: constants.FAILURE,
   payload: {
-    failure: isFaild,
+    failure: failure,
     message: msg
   }
 })
